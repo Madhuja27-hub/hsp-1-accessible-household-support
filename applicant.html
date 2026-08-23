@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Step 1: Applicant Information | Household Support Application</title>
+
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <!-- Header -->
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">FORM HSP-1</p>
+
+                <h1>Calder County Department of Household Services</h1>
+
+                <p class="header-subtitle">
+                    Application for Household Support
+                </p>
+            </div>
+
+            <span class="step-indicator">
+                Step 1 of 6
+            </span>
+        </header>
+
+
+        <!-- Progress Navigation -->
+        <nav class="progress-bar" aria-label="Application progress">
+
+            <ol>
+
+                <li class="current" aria-current="step">
+                    <span>1</span>
+                    <span>Applicant</span>
+                </li>
+
+                <li>
+                    <span>2</span>
+                    <span>Household</span>
+                </li>
+
+                <li>
+                    <span>3</span>
+                    <span>Income</span>
+                </li>
+
+                <li>
+                    <span>4</span>
+                    <span>Resources</span>
+                </li>
+
+                <li>
+                    <span>5</span>
+                    <span>Review</span>
+                </li>
+
+                <li>
+                    <span>6</span>
+                    <span>Declaration</span>
+                </li>
+
+            </ol>
+
+        </nav>
+
+
+        <!-- Form Section -->
+        <section class="form-section" aria-labelledby="applicant-heading">
+
+            <div class="section-heading">
+
+                <h2 id="applicant-heading">
+                    Step 1: Applicant Details
+                </h2>
+
+                <p>
+                    Please provide information about the person applying
+                    for household support.
+                </p>
+
+            </div>
+
+
+            <!-- Information Box -->
+            <div class="info-box" role="note">
+
+                <strong>Before you begin</strong>
+
+                <p>
+                    Complete the required fields marked with an asterisk.
+                    You can save your application and return to it later
+                    on this device.
+                </p>
+
+            </div>
+
+
+            <!-- Applicant Form -->
+            <form id="applicantForm" novalidate>
+
+
+                <!-- Personal Information -->
+                <fieldset>
+
+                    <legend>Personal information</legend>
+
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+
+                        <label for="fullName">
+
+                            Full name
+                            <span class="required" aria-hidden="true">*</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            autocomplete="name"
+                            required
+                            aria-required="true"
+                            aria-describedby="fullNameHelp"
+                        >
+
+                        <p id="fullNameHelp" class="help-text">
+                            Enter your first and last name.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+
+                        <label for="dateOfBirth">
+
+                            Date of birth
+                            <span class="required" aria-hidden="true">*</span>
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            name="dateOfBirth"
+                            autocomplete="bday"
+                            required
+                            aria-required="true"
+                        >
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Contact Information -->
+                <fieldset>
+
+                    <legend>Contact information</legend>
+
+
+                    <!-- Phone -->
+                    <div class="form-group">
+
+                        <label for="phone">
+
+                            Phone number
+                            <span class="required" aria-hidden="true">*</span>
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            autocomplete="tel"
+                            required
+                            aria-required="true"
+                            placeholder="Enter your phone number"
+                        >
+
+                        <p class="help-text">
+                            Include your area or mobile number.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                        >
+
+                        <p class="help-text">
+                            Optional. We may use this to contact you about
+                            your application.
+                        </p>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Contact Preference -->
+                <fieldset>
+
+                    <legend>
+                        How would you prefer us to contact you?
+                    </legend>
+
+                    <div class="radio-group">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="contactMethod"
+                                value="Phone"
+                            >
+                            Phone
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="contactMethod"
+                                value="Email"
+                            >
+                            Email
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="contactMethod"
+                                value="Mail"
+                            >
+                            Mail
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Required Note -->
+                <div class="required-note">
+
+                    <span aria-hidden="true">*</span>
+                    Required fields
+
+                </div>
+
+
+                <!-- Status Message -->
+                <div
+                    id="formStatus"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Buttons -->
+                <div class="form-actions">
+
+                    <a
+                        href="index.html"
+                        class="secondary-button"
+                    >
+                        Back
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="saveButton"
+                        class="secondary-button"
+                    >
+                        Save and exit
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save and continue
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="page-footer">
+
+            <p>
+                Your information is used only to process your
+                Household Support application.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/validation.js"></script>
+    <script src="../../js/conditional-fields.js"></script>
+    <script src="../../js/app.js"></script>
+
+
+    <!-- Applicant Form Logic -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("applicantForm");
+
+            const saveButton =
+                document.getElementById("saveButton");
+
+            const formStatus =
+                document.getElementById("formStatus");
+
+
+            /*
+             * Load previously saved applicant information
+             */
+
+            function loadSavedData() {
+
+                const savedData =
+                    localStorage.getItem("applicantApplication");
+
+                if (!savedData) {
+                    return;
+                }
+
+                try {
+
+                    const data =
+                        JSON.parse(savedData);
+
+
+                    document.getElementById("fullName").value =
+                        data.fullName || "";
+
+                    document.getElementById("dateOfBirth").value =
+                        data.dateOfBirth || "";
+
+                    document.getElementById("phone").value =
+                        data.phone || "";
+
+                    document.getElementById("email").value =
+                        data.email || "";
+
+
+                    if (data.contactMethod) {
+
+                        const selectedRadio =
+                            document.querySelector(
+                                `input[name="contactMethod"][value="${data.contactMethod}"]`
+                            );
+
+                        if (selectedRadio) {
+                            selectedRadio.checked = true;
+                        }
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Unable to load saved applicant information:",
+                        error
+                    );
+
+                }
+
+            }
+
+
+            /*
+             * Save applicant information
+             */
+
+            function saveForm() {
+
+                const formData =
+                    new FormData(form);
+
+
+                const data = {
+
+                    fullName:
+                        formData.get("fullName") || "",
+
+                    dateOfBirth:
+                        formData.get("dateOfBirth") || "",
+
+                    phone:
+                        formData.get("phone") || "",
+
+                    email:
+                        formData.get("email") || "",
+
+                    contactMethod:
+                        formData.get("contactMethod") || ""
+
+                };
+
+
+                /*
+                 * IMPORTANT:
+                 * This key must match the key used in review.html
+                 */
+
+                localStorage.setItem(
+                    "applicantApplication",
+                    JSON.stringify(data)
+                );
+
+
+                formStatus.textContent =
+                    "Your applicant information has been saved.";
+
+            }
+
+
+            /*
+             * Save automatically while typing
+             */
+
+            form.addEventListener(
+                "input",
+                function () {
+
+                    saveForm();
+
+                }
+            );
+
+
+            form.addEventListener(
+                "change",
+                function () {
+
+                    saveForm();
+
+                }
+            );
+
+
+            /*
+             * Save and exit button
+             */
+
+            saveButton.addEventListener(
+                "click",
+                function () {
+
+                    saveForm();
+
+                }
+            );
+
+
+            /*
+             * Save and continue
+             */
+
+            form.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    if (!form.checkValidity()) {
+
+                        form.reportValidity();
+
+                        formStatus.textContent =
+                            "Please complete all required fields before continuing.";
+
+                        return;
+
+                    }
+
+
+                    saveForm();
+
+
+                    /*
+                     * Go to Step 2
+                     */
+
+                    window.location.href =
+                        "household.html";
+
+                }
+            );
+
+
+            /*
+             * Load existing data when page opens
+             */
+
+            loadSavedData();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

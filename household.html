@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Household Information | Household Support Application</title>
+
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Skip navigation -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+
+    <main id="main-content" class="page-container">
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <div>
+                <p class="eyebrow">FORM HSP-1</p>
+
+                <h1>
+                    Application for Household Support
+                </h1>
+            </div>
+
+            <span class="step-indicator">
+                Step 2 of 6
+            </span>
+
+        </header>
+
+
+        <!-- PROGRESS -->
+
+        <nav
+            class="progress-bar"
+            aria-label="Application progress">
+
+            <ol>
+
+                <li class="completed">
+                    <span>1</span>
+                    <span>Applicant</span>
+                </li>
+
+                <li
+                    class="current"
+                    aria-current="step">
+
+                    <span>2</span>
+                    <span>Household</span>
+
+                </li>
+
+                <li>
+                    <span>3</span>
+                    <span>Income</span>
+                </li>
+
+                <li>
+                    <span>4</span>
+                    <span>Resources</span>
+                </li>
+
+                <li>
+                    <span>5</span>
+                    <span>Review</span>
+                </li>
+
+
+                <li>
+                    <span>6</span>
+                    <span>Declaration</span>
+                </li>
+
+            </ol>
+
+        </nav>
+
+
+        <!-- FORM SECTION -->
+
+        <section
+            class="form-section"
+            aria-labelledby="household-heading">
+
+            <div class="section-heading">
+
+                <h2 id="household-heading">
+                    Household Information
+                </h2>
+
+                <p>
+                    Tell us about the people who live in your household.
+                    You can save your application and return later.
+                </p>
+
+            </div>
+
+
+            <!-- INFORMATION BOX -->
+
+            <div
+                class="info-box"
+                role="note">
+
+                <strong>
+                    Who should you include?
+                </strong>
+
+                <p>
+                    Include everyone who normally lives with you,
+                    even if they are temporarily away from home.
+                </p>
+
+            </div>
+
+
+            <form
+                id="householdForm"
+                novalidate>
+
+
+                <!-- HOUSEHOLD SIZE -->
+
+                <fieldset>
+
+                    <legend>
+                        Household size
+                    </legend>
+
+                    <div class="form-group">
+
+                        <label for="householdSize">
+
+                            How many people live in your household?
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <p
+                            class="help-text"
+                            id="householdSizeHelp">
+
+                            Include yourself.
+
+                        </p>
+
+                        <input
+                            type="number"
+                            id="householdSize"
+                            name="householdSize"
+                            min="1"
+                            max="20"
+                            required
+                            aria-required="true"
+                            aria-describedby="householdSizeHelp householdSizeError">
+
+                        <div
+                            id="householdSizeError"
+                            class="error-message"
+                            role="alert"
+                            aria-live="polite">
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- HOUSEHOLD MEMBERS -->
+
+                <fieldset>
+
+                    <legend>
+                        Household members
+                    </legend>
+
+                    <p class="help-text">
+                        Add information about each person who lives
+                        in your household, excluding yourself.
+                    </p>
+
+                    <div
+                        id="membersContainer"
+                        aria-live="polite">
+                    </div>
+
+                    <button
+                        type="button"
+                        id="addMemberBtn"
+                        class="secondary-button">
+
+                        + Add household member
+
+                    </button>
+
+                </fieldset>
+
+
+                <!-- HOUSING -->
+
+                <fieldset>
+
+                    <legend>
+                        Housing situation
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label for="housingType">
+
+                            What is your current housing situation?
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <select
+                            id="housingType"
+                            name="housingType"
+                            required
+                            aria-required="true"
+                            aria-describedby="housingTypeHelp">
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option value="rent">
+                                I rent my home
+                            </option>
+
+                            <option value="own">
+                                I own my home
+                            </option>
+
+                            <option value="temporary">
+                                Temporary housing
+                            </option>
+
+                            <option value="homeless">
+                                I do not currently have housing
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+
+                        <p
+                            class="help-text"
+                            id="housingTypeHelp">
+
+                            Choose the option that best describes
+                            your current situation.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- CONDITIONAL RENT FIELD -->
+
+                    <div
+                        class="form-group conditional-field"
+                        id="monthlyRentGroup"
+                        hidden
+                        aria-hidden="true">
+
+                        <label for="monthlyRent">
+
+                            What is your monthly rent?
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <div class="input-with-prefix">
+
+                            <span aria-hidden="true">
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="monthlyRent"
+                                name="monthlyRent"
+                                min="0"
+                                step="0.01"
+                                inputmode="decimal"
+                                aria-describedby="monthlyRentHelp">
+
+                        </div>
+
+                        <p
+                            class="help-text"
+                            id="monthlyRentHelp">
+
+                            This field is required only if you rent your home.
+
+                        </p>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- HOUSEHOLD CIRCUMSTANCES -->
+
+                <fieldset>
+
+                    <legend>
+                        Household circumstances
+                    </legend>
+
+
+                    <!-- CHILDREN -->
+
+                    <div class="form-group">
+
+                        <label for="childrenUnder18">
+
+                            How many household members are under 18 years old?
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="childrenUnder18"
+                            name="childrenUnder18"
+                            min="0"
+                            max="20"
+                            value="0"
+                            required
+                            aria-required="true">
+
+                    </div>
+
+
+                    <!-- OLDER MEMBERS -->
+
+                    <div class="form-group">
+
+                        <label for="elderlyMembers">
+
+                            How many household members are 60 years
+                            or older?
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="elderlyMembers"
+                            name="elderlyMembers"
+                            min="0"
+                            max="20"
+                            value="0"
+                            required
+                            aria-required="true">
+
+                    </div>
+
+
+                    <!-- ADDITIONAL SUPPORT -->
+
+                    <div class="form-group">
+
+                        <fieldset class="nested-fieldset">
+
+                            <legend>
+                                Does anyone in your household need
+                                additional support?
+                            </legend>
+
+                            <div class="radio-group">
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="additionalSupport"
+                                        value="yes">
+                                    Yes
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="additionalSupport"
+                                        value="no"
+                                        checked>
+                                    No
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+                    </div>
+
+
+                    <!-- CONDITIONAL SUPPORT DETAILS -->
+
+                    <div
+                        class="form-group conditional-field"
+                        id="supportDetailsGroup"
+                        hidden
+                        aria-hidden="true">
+
+                        <label for="supportDetails">
+
+                            Please briefly describe the support needed.
+
+                            <span
+                                class="required"
+                                aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <textarea
+                            id="supportDetails"
+                            name="supportDetails"
+                            rows="4"
+                            maxlength="500"
+                            aria-describedby="supportDetailsHelp">
+                        </textarea>
+
+                        <p
+                            class="help-text"
+                            id="supportDetailsHelp">
+
+                            Provide only the information needed to
+                            explain the support required.
+
+                        </p>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- REQUIRED NOTE -->
+
+                <div class="required-note">
+
+                    <span aria-hidden="true">*</span>
+
+                    Required fields
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div
+                    id="formStatus"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="applicant.html"
+                        class="secondary-button">
+
+                        ← Back
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="saveButton"
+                        class="secondary-button">
+
+                        Save progress
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Save and continue →
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="page-footer">
+
+            <p>
+                Your information is used only to process your
+                Household Support application.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/validation.js"></script>
+    <script src="../../js/app.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const householdForm =
+                    document.getElementById("householdForm");
+
+                const householdSize =
+                    document.getElementById("householdSize");
+
+                const membersContainer =
+                    document.getElementById("membersContainer");
+
+                const addMemberBtn =
+                    document.getElementById("addMemberBtn");
+
+                const housingType =
+                    document.getElementById("housingType");
+
+                const monthlyRentGroup =
+                    document.getElementById("monthlyRentGroup");
+
+                const monthlyRent =
+                    document.getElementById("monthlyRent");
+
+                const supportDetailsGroup =
+                    document.getElementById("supportDetailsGroup");
+
+                const supportDetails =
+                    document.getElementById("supportDetails");
+
+                const saveButton =
+                    document.getElementById("saveButton");
+
+                const formStatus =
+                    document.getElementById("formStatus");
+
+
+                let memberCount = 0;
+
+
+                /* ------------------------------
+                   CREATE HOUSEHOLD MEMBER
+                ------------------------------ */
+
+                function createMemberCard() {
+
+                    memberCount++;
+
+                    const card =
+                        document.createElement("article");
+
+                    card.className =
+                        "household-member";
+
+                    card.dataset.member =
+                        memberCount;
+
+
+                    card.innerHTML = `
+
+                        <div class="member-header">
+
+                            <h3>
+                                Household member ${memberCount}
+                            </h3>
+
+                            <button
+                                type="button"
+                                class="remove-member"
+                                aria-label="Remove household member ${memberCount}">
+
+                                Remove
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="memberName${memberCount}">
+
+                                Full name
+
+                                <span
+                                    class="required"
+                                    aria-hidden="true">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="memberName${memberCount}"
+                                name="memberName[]"
+                                required
+                                aria-required="true">
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="memberAge${memberCount}">
+
+                                    Age
+
+                                    <span
+                                        class="required"
+                                        aria-hidden="true">
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="memberAge${memberCount}"
+                                    name="memberAge[]"
+                                    min="0"
+                                    max="120"
+                                    required
+                                    aria-required="true">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="memberRelationship${memberCount}">
+
+                                    Relationship to you
+
+                                    <span
+                                        class="required"
+                                        aria-hidden="true">
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <select
+                                    id="memberRelationship${memberCount}"
+                                    name="memberRelationship[]"
+                                    required
+                                    aria-required="true">
+
+                                    <option value="">
+                                        Select relationship
+                                    </option>
+
+                                    <option value="spouse">
+                                        Spouse/Partner
+                                    </option>
+
+                                    <option value="child">
+                                        Child
+                                    </option>
+
+                                    <option value="parent">
+                                        Parent
+                                    </option>
+
+                                    <option value="sibling">
+                                        Sibling
+                                    </option>
+
+                                    <option value="grandparent">
+                                        Grandparent
+                                    </option>
+
+                                    <option value="grandchild">
+                                        Grandchild
+                                    </option>
+
+                                    <option value="other-relative">
+                                        Other relative
+                                    </option>
+
+                                    <option value="non-relative">
+                                        Non-relative
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                    `;
+
+
+                    membersContainer.appendChild(card);
+
+
+                    card
+                        .querySelector(".remove-member")
+                        .addEventListener(
+                            "click",
+                            function () {
+
+                                card.remove();
+
+                                updateMemberHeadings();
+
+                            }
+                        );
+
+                }
+
+
+                /* ------------------------------
+                   UPDATE MEMBER HEADINGS
+                ------------------------------ */
+
+                function updateMemberHeadings() {
+
+                    const cards =
+                        membersContainer.querySelectorAll(
+                            ".household-member"
+                        );
+
+
+                    cards.forEach(
+                        function (card, index) {
+
+                            const number =
+                                index + 1;
+
+                            card.dataset.member =
+                                number;
+
+
+                            card.querySelector("h3")
+                                .textContent =
+                                `Household member ${number}`;
+
+
+                            card.querySelector(".remove-member")
+                                .setAttribute(
+                                    "aria-label",
+                                    `Remove household member ${number}`
+                                );
+
+                        }
+                    );
+
+
+                    memberCount =
+                        cards.length;
+
+                }
+
+
+                /* ------------------------------
+                   HOUSING CONDITIONAL FIELD
+                ------------------------------ */
+
+                function updateHousingFields() {
+
+                    const isRenting =
+                        housingType.value === "rent";
+
+
+                    monthlyRentGroup.hidden =
+                        !isRenting;
+
+                    monthlyRentGroup.setAttribute(
+                        "aria-hidden",
+                        String(!isRenting)
+                    );
+
+
+                    monthlyRent.required =
+                        isRenting;
+
+
+                    monthlyRent.setAttribute(
+                        "aria-required",
+                        String(isRenting)
+                    );
+
+
+                    if (!isRenting) {
+
+                        monthlyRent.value = "";
+
+                    }
+
+                }
+
+
+                /* ------------------------------
+                   SUPPORT CONDITIONAL FIELD
+                ------------------------------ */
+
+                function updateSupportFields() {
+
+                    const selected =
+                        document.querySelector(
+                            'input[name="additionalSupport"]:checked'
+                        );
+
+
+                    const needsSupport =
+                        selected &&
+                        selected.value === "yes";
+
+
+                    supportDetailsGroup.hidden =
+                        !needsSupport;
+
+
+                    supportDetailsGroup.setAttribute(
+                        "aria-hidden",
+                        String(!needsSupport)
+                    );
+
+
+                    supportDetails.required =
+                        needsSupport;
+
+
+                    supportDetails.setAttribute(
+                        "aria-required",
+                        String(needsSupport)
+                    );
+
+
+                    if (!needsSupport) {
+
+                        supportDetails.value = "";
+
+                    }
+
+                }
+
+
+                /* ------------------------------
+                   SAVE FORM
+                ------------------------------ */
+
+                function saveForm() {
+
+                    const formData =
+                        new FormData(householdForm);
+
+                    const data = {};
+
+
+                    for (
+                        const [key, value]
+                        of formData.entries()
+                    ) {
+
+                        if (key.endsWith("[]")) {
+
+                            const cleanKey =
+                                key.slice(0, -2);
+
+
+                            if (!data[cleanKey]) {
+
+                                data[cleanKey] = [];
+
+                            }
+
+
+                            data[cleanKey].push(value);
+
+                        } else {
+
+                            data[key] = value;
+
+                        }
+
+                    }
+
+
+                    localStorage.setItem(
+                        "householdApplication",
+                        JSON.stringify(data)
+                    );
+
+
+                    formStatus.textContent =
+                        "Your household information has been saved.";
+
+                }
+
+
+                /* ------------------------------
+                   EVENT LISTENERS
+                ------------------------------ */
+
+                addMemberBtn.addEventListener(
+                    "click",
+                    createMemberCard
+                );
+
+
+                housingType.addEventListener(
+                    "change",
+                    updateHousingFields
+                );
+
+
+                document
+                    .querySelectorAll(
+                        'input[name="additionalSupport"]'
+                    )
+                    .forEach(
+                        function (radio) {
+
+                            radio.addEventListener(
+                                "change",
+                                updateSupportFields
+                            );
+
+                        }
+                    );
+
+
+                saveButton.addEventListener(
+                    "click",
+                    saveForm
+                );
+
+
+                householdForm.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        if (!householdForm.checkValidity()) {
+
+                            householdForm.reportValidity();
+
+                            formStatus.textContent =
+                                "Please complete the required fields before continuing.";
+
+                            return;
+
+                        }
+
+
+                        saveForm();
+
+
+                        window.location.href =
+                            "income.html";
+
+                    }
+                );
+
+
+                /* ------------------------------
+                   HOUSEHOLD SIZE
+                ------------------------------ */
+
+                householdSize.addEventListener(
+                    "change",
+                    function () {
+
+                        const requestedSize =
+                            Number(
+                                householdSize.value
+                            );
+
+
+                        if (
+                            !requestedSize ||
+                            requestedSize < 1
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Applicant is already included.
+                         * Create cards only for other members.
+                         */
+
+                        const requiredMembers =
+                            Math.max(
+                                requestedSize - 1,
+                                0
+                            );
+
+
+                        const currentMembers =
+                            membersContainer
+                                .querySelectorAll(
+                                    ".household-member"
+                                )
+                                .length;
+
+
+                        if (
+                            requiredMembers >
+                            currentMembers
+                        ) {
+
+                            for (
+                                let i = currentMembers;
+                                i < requiredMembers;
+                                i++
+                            ) {
+
+                                createMemberCard();
+
+                            }
+
+                        }
+
+                    }
+                );
+
+
+                /* Initial state */
+
+                updateHousingFields();
+
+                updateSupportFields();
+
+            }
+
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Review Application | Household Support Application</title>
+
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+  <main class="page-container">
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+      <div>
+        <p class="eyebrow">FORM HSP-1</p>
+
+        <h1>
+          Calder County Department of Household Services
+        </h1>
+
+        <p class="header-subtitle">
+          Application for Household Support
+        </p>
+      </div>
+
+      <span class="step-indicator">
+        Step 5 of 6
+      </span>
+
+    </header>
+
+
+    <!-- PROGRESS BAR -->
+
+    <nav class="progress-bar" aria-label="Application progress">
+
+      <ol>
+
+        <li class="completed">
+          <span>1</span>
+          <span>Applicant</span>
+        </li>
+
+        <li class="completed">
+          <span>2</span>
+          <span>Household</span>
+        </li>
+
+        <li class="completed">
+          <span>3</span>
+          <span>Income</span>
+        </li>
+
+        <li class="completed">
+          <span>4</span>
+          <span>Resources</span>
+        </li>
+
+        <li class="current" aria-current="step">
+          <span>5</span>
+          <span>Review</span>
+        </li>
+
+        <li>
+          <span>6</span>
+          <span>Declaration</span>
+        </li>
+
+      </ol>
+
+    </nav>
+
+
+    <!-- MAIN REVIEW SECTION -->
+
+    <section
+      class="form-section"
+      aria-labelledby="review-heading"
+    >
+
+      <div class="section-heading">
+
+        <h2 id="review-heading">
+          Review Your Application
+        </h2>
+
+        <p>
+          Check the information below before continuing.
+          You can go back and make changes if anything is incorrect.
+        </p>
+
+      </div>
+
+
+      <!-- INFORMATION BOX -->
+
+      <div class="info-box" role="note">
+
+        <strong>Before you continue</strong>
+
+        <p>
+          Please review all of your information carefully.
+          You will complete one final declaration before submitting
+          your application.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           APPLICANT INFORMATION
+      ========================== -->
+
+      <section
+        class="review-section"
+        aria-labelledby="applicant-review-heading"
+      >
+
+        <div class="review-section-header">
+
+          <h2 id="applicant-review-heading">
+            Applicant Information
+          </h2>
+
+          <a
+            href="applicant.html"
+            class="edit-link"
+          >
+            Edit applicant information
+          </a>
+
+        </div>
+
+
+        <dl class="review-list">
+
+          <div>
+            <dt>Full name</dt>
+            <dd id="reviewFullName">Not provided</dd>
+          </div>
+
+          <div>
+            <dt>Date of birth</dt>
+            <dd id="reviewDateOfBirth">Not provided</dd>
+          </div>
+
+          <div>
+            <dt>Phone number</dt>
+            <dd id="reviewPhone">Not provided</dd>
+          </div>
+
+          <div>
+            <dt>Email address</dt>
+            <dd id="reviewEmail">Not provided</dd>
+          </div>
+
+          <div>
+            <dt>Preferred contact method</dt>
+            <dd id="reviewContactMethod">Not provided</dd>
+          </div>
+
+        </dl>
+
+      </section>
+
+
+      <!-- =========================
+           HOUSEHOLD INFORMATION
+      ========================== -->
+
+      <section
+        class="review-section"
+        aria-labelledby="household-review-heading"
+      >
+
+        <div class="review-section-header">
+
+          <h2 id="household-review-heading">
+            Household Information
+          </h2>
+
+          <a
+            href="household.html"
+            class="edit-link"
+          >
+            Edit household information
+          </a>
+
+        </div>
+
+
+        <dl class="review-list">
+
+          <div>
+            <dt>Household size</dt>
+            <dd id="reviewHouseholdSize">
+              Not provided
+            </dd>
+          </div>
+
+          <div>
+            <dt>Housing situation</dt>
+            <dd id="reviewHousingType">
+              Not provided
+            </dd>
+          </div>
+
+          <div>
+            <dt>Children under 18</dt>
+            <dd id="reviewChildren">
+              Not provided
+            </dd>
+          </div>
+
+          <div>
+            <dt>Household members age 60+</dt>
+            <dd id="reviewElderly">
+              Not provided
+            </dd>
+          </div>
+
+          <div>
+            <dt>Additional support needed</dt>
+            <dd id="reviewSupport">
+              Not provided
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <div
+          id="reviewMembersContainer"
+          class="review-members"
+        ></div>
+
+      </section>
+
+
+      <!-- =========================
+           INCOME INFORMATION
+      ========================== -->
+
+      <section
+        class="review-section"
+        aria-labelledby="income-review-heading"
+      >
+
+        <div class="review-section-header">
+
+          <h2 id="income-review-heading">
+            Income Information
+          </h2>
+
+          <a
+            href="income.html"
+            class="edit-link"
+          >
+            Edit income information
+          </a>
+
+        </div>
+
+
+        <dl class="review-list">
+
+          <div>
+            <dt>Employment income</dt>
+            <dd id="reviewEmploymentIncome">
+              ₹0.00
+            </dd>
+          </div>
+
+          <div>
+            <dt>Pension or retirement income</dt>
+            <dd id="reviewPension">
+              ₹0.00
+            </dd>
+          </div>
+
+          <div>
+            <dt>Government benefits</dt>
+            <dd id="reviewBenefits">
+              ₹0.00
+            </dd>
+          </div>
+
+          <div>
+            <dt>Child support</dt>
+            <dd id="reviewChildSupport">
+              ₹0.00
+            </dd>
+          </div>
+
+          <div>
+            <dt>Other income</dt>
+            <dd id="reviewOtherIncome">
+              ₹0.00
+            </dd>
+          </div>
+
+          <div class="review-total">
+
+            <dt>
+              Estimated monthly household income
+            </dt>
+
+            <dd id="reviewTotalIncome">
+              ₹0.00
+            </dd>
+
+          </div>
+
+        </dl>
+
+      </section>
+
+
+      <!-- =========================
+           RESOURCES INFORMATION
+      ========================== -->
+
+      <section
+        class="review-section"
+        aria-labelledby="resources-review-heading"
+      >
+
+        <div class="review-section-header">
+
+          <h2 id="resources-review-heading">
+            Resources and Assets
+          </h2>
+
+          <a
+            href="resources.html"
+            class="edit-link"
+          >
+            Edit resource information
+          </a>
+
+        </div>
+
+
+        <dl class="review-list">
+
+          <div>
+            <dt>Current/checking account</dt>
+            <dd id="reviewChecking">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Savings account</dt>
+            <dd id="reviewSavings">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Cash available</dt>
+            <dd id="reviewCash">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Property value</dt>
+            <dd id="reviewProperty">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Vehicle value</dt>
+            <dd id="reviewVehicle">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Investments</dt>
+            <dd id="reviewInvestments">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Retirement savings</dt>
+            <dd id="reviewRetirement">₹0.00</dd>
+          </div>
+
+          <div>
+            <dt>Other assets</dt>
+            <dd id="reviewOtherAssets">₹0.00</dd>
+          </div>
+
+          <div class="review-total">
+
+            <dt>
+              Estimated total resources
+            </dt>
+
+            <dd id="reviewTotalResources">
+              ₹0.00
+            </dd>
+
+          </div>
+
+        </dl>
+
+      </section>
+
+
+      <!-- STATUS MESSAGE -->
+
+      <div
+        id="formStatus"
+        class="form-status"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- BUTTONS -->
+
+      <div class="form-actions">
+
+        <a
+          href="resources.html"
+          class="secondary-button"
+        >
+          Back
+        </a>
+
+
+        <button
+          type="button"
+          id="saveButton"
+          class="secondary-button"
+        >
+          Save application
+        </button>
+
+
+        <button
+          type="button"
+          id="continueButton"
+          class="primary-button"
+        >
+          Continue to Declaration
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="page-footer">
+
+      <p>
+        Your information is used only to process your Household Support
+        application.
+      </p>
+
+    </footer>
+
+  </main>
+
+
+  <script src="../../js/app.js"></script>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+      /* ========================================
+         GET ELEMENTS
+      ======================================== */
+
+      const continueButton =
+        document.getElementById("continueButton");
+
+      const saveButton =
+        document.getElementById("saveButton");
+
+      const formStatus =
+        document.getElementById("formStatus");
+
+
+      /* ========================================
+         GET LOCAL STORAGE DATA
+      ======================================== */
+
+      function getStoredData(key) {
+
+        try {
+
+          const stored =
+            localStorage.getItem(key);
+
+          if (!stored) {
+            return {};
+          }
+
+          return JSON.parse(stored);
+
+        } catch (error) {
+
+          console.error(
+            "Unable to read saved data:",
+            key,
+            error
+          );
+
+          return {};
+
+        }
+
+      }
+
+
+      const applicantData =
+        getStoredData("applicantApplication");
+
+      const householdData =
+        getStoredData("householdApplication");
+
+      const incomeData =
+        getStoredData("incomeApplication");
+
+      const resourcesData =
+        getStoredData("resourcesApplication");
+
+
+      /* ========================================
+         HELPER FUNCTIONS
+      ======================================== */
+
+      function displayValue(value) {
+
+        if (
+          value === undefined ||
+          value === null ||
+          value === ""
+        ) {
+
+          return "Not provided";
+
+        }
+
+        return value;
+
+      }
+
+
+      function getNumber(value) {
+
+        const number =
+          Number(value);
+
+        return Number.isFinite(number)
+          ? number
+          : 0;
+
+      }
+
+
+      function money(value) {
+
+        const amount =
+          getNumber(value);
+
+        return "₹" +
+          amount.toLocaleString(
+            "en-IN",
+            {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            }
+          );
+
+      }
+
+
+      function setText(id, value) {
+
+        const element =
+          document.getElementById(id);
+
+        if (element) {
+
+          element.textContent =
+            displayValue(value);
+
+        }
+
+      }
+
+
+      /* ========================================
+         APPLICANT INFORMATION
+      ======================================== */
+
+      function loadApplicantData() {
+
+        setText(
+          "reviewFullName",
+          applicantData.fullName
+        );
+
+
+        setText(
+          "reviewDateOfBirth",
+          applicantData.dateOfBirth
+        );
+
+
+        setText(
+          "reviewPhone",
+          applicantData.phone
+        );
+
+
+        setText(
+          "reviewEmail",
+          applicantData.email
+        );
+
+
+        setText(
+          "reviewContactMethod",
+          applicantData.contactMethod
+        );
+
+      }
+
+
+      /* ========================================
+         HOUSEHOLD INFORMATION
+      ======================================== */
+
+      function loadHouseholdData() {
+
+        setText(
+          "reviewHouseholdSize",
+          householdData.householdSize
+        );
+
+
+        const housingLabels = {
+
+          rent:
+            "I rent my home",
+
+          own:
+            "I own my home",
+
+          temporary:
+            "Temporary housing",
+
+          homeless:
+            "I do not currently have housing",
+
+          other:
+            "Other"
+
+        };
+
+
+        const housingValue =
+          householdData.housingType;
+
+
+        setText(
+          "reviewHousingType",
+
+          housingLabels[housingValue] ||
+          housingValue
+        );
+
+
+        setText(
+          "reviewChildren",
+
+          householdData.childrenUnder18 ||
+          householdData.children
+        );
+
+
+        setText(
+          "reviewElderly",
+
+          householdData.elderlyMembers ||
+          householdData.elderly
+        );
+
+
+        let supportValue =
+          householdData.additionalSupport;
+
+
+        if (supportValue === "yes") {
+          supportValue = "Yes";
+        }
+
+        else if (supportValue === "no") {
+          supportValue = "No";
+        }
+
+
+        setText(
+          "reviewSupport",
+          supportValue
+        );
+
+
+        loadHouseholdMembers();
+
+      }
+
+
+      /* ========================================
+         HOUSEHOLD MEMBERS
+      ======================================== */
+
+      function loadHouseholdMembers() {
+
+        const membersContainer =
+          document.getElementById(
+            "reviewMembersContainer"
+          );
+
+
+        if (!membersContainer) {
+          return;
+        }
+
+
+        membersContainer.innerHTML = "";
+
+
+        const names =
+          householdData.memberName || [];
+
+        const ages =
+          householdData.memberAge || [];
+
+        const relationships =
+          householdData.memberRelationship || [];
+
+
+        /*
+         * Convert single values to arrays
+         */
+
+        const memberNames =
+          Array.isArray(names)
+            ? names
+            : names
+              ? [names]
+              : [];
+
+
+        const memberAges =
+          Array.isArray(ages)
+            ? ages
+            : ages
+              ? [ages]
+              : [];
+
+
+        const memberRelationships =
+          Array.isArray(relationships)
+            ? relationships
+            : relationships
+              ? [relationships]
+              : [];
+
+
+        if (memberNames.length === 0) {
+          return;
+        }
+
+
+        const heading =
+          document.createElement("h3");
+
+        heading.textContent =
+          "Household members";
+
+
+        membersContainer.appendChild(
+          heading
+        );
+
+
+        memberNames.forEach(
+          function (name, index) {
+
+            const card =
+              document.createElement("article");
+
+            card.className =
+              "review-member-card";
+
+
+            const title =
+              document.createElement("h4");
+
+            title.textContent =
+              displayValue(name);
+
+
+            const details =
+              document.createElement("p");
+
+
+            details.textContent =
+              "Age: " +
+              displayValue(
+                memberAges[index]
+              ) +
+              " | Relationship: " +
+              displayValue(
+                memberRelationships[index]
+              );
+
+
+            card.appendChild(title);
+            card.appendChild(details);
+
+            membersContainer.appendChild(card);
+
+          }
+        );
+
+      }
+
+
+      /* ========================================
+         INCOME INFORMATION
+      ======================================== */
+
+      function loadIncomeData() {
+
+        let employmentTotal = 0;
+
+
+        const employmentAmounts =
+          incomeData.employmentAmount;
+
+
+        if (
+          Array.isArray(
+            employmentAmounts
+          )
+        ) {
+
+          employmentAmounts.forEach(
+            function (amount) {
+
+              employmentTotal +=
+                getNumber(amount);
+
+            }
+          );
+
+        }
+
+        else {
+
+          employmentTotal =
+            getNumber(employmentAmounts);
+
+        }
+
+
+        const pension =
+          getNumber(
+            incomeData.pensionIncome
+          );
+
+
+        const benefits =
+          getNumber(
+            incomeData.governmentBenefits
+          );
+
+
+        const childSupport =
+          getNumber(
+            incomeData.childSupport
+          );
+
+
+        const otherIncome =
+          getNumber(
+            incomeData.otherIncome
+          );
+
+
+        setText(
+          "reviewEmploymentIncome",
+          money(employmentTotal)
+        );
+
+
+        setText(
+          "reviewPension",
+          money(pension)
+        );
+
+
+        setText(
+          "reviewBenefits",
+          money(benefits)
+        );
+
+
+        setText(
+          "reviewChildSupport",
+          money(childSupport)
+        );
+
+
+        setText(
+          "reviewOtherIncome",
+          money(otherIncome)
+        );
+
+
+        const totalIncome =
+          employmentTotal +
+          pension +
+          benefits +
+          childSupport +
+          otherIncome;
+
+
+        setText(
+          "reviewTotalIncome",
+          money(totalIncome)
+        );
+
+      }
+
+
+      /* ========================================
+         RESOURCES INFORMATION
+      ======================================== */
+
+      function loadResourcesData() {
+
+        const checking =
+          getNumber(
+            resourcesData.checkingBalance
+          );
+
+        const savings =
+          getNumber(
+            resourcesData.savingsBalance
+          );
+
+        const cash =
+          getNumber(
+            resourcesData.cashOnHand
+          );
+
+        const property =
+          getNumber(
+            resourcesData.propertyValue
+          );
+
+        const vehicle =
+          getNumber(
+            resourcesData.vehicleValue
+          );
+
+        const investments =
+          getNumber(
+            resourcesData.investments
+          );
+
+        const retirement =
+          getNumber(
+            resourcesData.retirementSavings
+          );
+
+        const otherAssets =
+          getNumber(
+            resourcesData.otherAssets
+          );
+
+
+        setText(
+          "reviewChecking",
+          money(checking)
+        );
+
+        setText(
+          "reviewSavings",
+          money(savings)
+        );
+
+        setText(
+          "reviewCash",
+          money(cash)
+        );
+
+        setText(
+          "reviewProperty",
+          money(property)
+        );
+
+        setText(
+          "reviewVehicle",
+          money(vehicle)
+        );
+
+        setText(
+          "reviewInvestments",
+          money(investments)
+        );
+
+        setText(
+          "reviewRetirement",
+          money(retirement)
+        );
+
+        setText(
+          "reviewOtherAssets",
+          money(otherAssets)
+        );
+
+
+        const totalResources =
+          checking +
+          savings +
+          cash +
+          property +
+          vehicle +
+          investments +
+          retirement +
+          otherAssets;
+
+
+        setText(
+          "reviewTotalResources",
+          money(totalResources)
+        );
+
+      }
+
+
+      /* ========================================
+         SAVE APPLICATION
+      ======================================== */
+
+      function saveApplication() {
+
+        localStorage.setItem(
+          "applicationSaved",
+          "true"
+        );
+
+
+        formStatus.textContent =
+          "Your application has been saved on this device.";
+
+      }
+
+
+      /* ========================================
+         CONTINUE TO DECLARATION
+      ======================================== */
+
+      function continueToDeclaration() {
+
+        window.location.href =
+          "declaration.html";
+
+      }
+
+
+      /* ========================================
+         EVENT LISTENERS
+      ======================================== */
+
+      saveButton.addEventListener(
+        "click",
+        saveApplication
+      );
+
+
+      continueButton.addEventListener(
+        "click",
+        continueToDeclaration
+      );
+
+
+      /* ========================================
+         LOAD ALL DATA
+      ======================================== */
+
+      loadApplicantData();
+
+      loadHouseholdData();
+
+      loadIncomeData();
+
+      loadResourcesData();
+
+
+    });
+
+  </script>
+
+</body>
+
+</html>

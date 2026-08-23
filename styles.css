@@ -1,0 +1,1617 @@
+/* =========================================================
+   FORM HSP-1
+   Household Support Application
+   Transparent / Glass Government Service Design
+   Accessible and Responsive
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #1f2937;
+
+    /* Background image */
+    background-image:
+    linear-gradient(
+        rgba(255, 255, 255, 0.38),
+        rgba(255, 255, 255, 0.38)
+    ),
+    url("../images/background.jpg");
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    z-index: 1000;
+
+    padding: 12px 18px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
+/* =========================================================
+   GLOBAL FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    background: rgba(18, 53, 91, 0.88);
+
+    color: #ffffff;
+
+    padding: 30px 20px;
+
+    box-shadow:
+        0 4px 16px rgba(18, 53, 91, 0.18);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.site-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    letter-spacing: 0.2px;
+}
+
+.site-subtitle {
+    margin: 8px 0 0;
+
+    color: #e5eef7;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.form-card {
+    background: rgba(255, 255, 255, 0.62);
+
+    padding: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: #12355b;
+    line-height: 1.3;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 2rem;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.page-intro {
+    margin-bottom: 28px;
+
+    color: #334155;
+
+    font-size: 1.05rem;
+    max-width: 760px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-container {
+    margin-bottom: 30px;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.50);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.progress-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #12355b;
+    font-weight: 700;
+}
+
+progress {
+    width: 100%;
+    height: 18px;
+
+    overflow: hidden;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+progress::-webkit-progress-bar {
+    background: rgba(229, 231, 235, 0.65);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background: #1f5f8b;
+    border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+    background: #1f5f8b;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #1f2937;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    color: #111827;
+
+    border: 1.5px solid rgba(100, 116, 139, 0.65);
+    border-radius: 8px;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    background: rgba(255, 255, 255, 0.72);
+
+    border-color: #1f5f8b;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.82);
+
+    border-color: #1f5f8b;
+
+    outline: 3px solid rgba(31, 95, 139, 0.18);
+    outline-offset: 1px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   REQUIRED
+   ========================================================= */
+
+.required {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HELP TEXT
+   ========================================================= */
+
+.help-text {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #475569;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   FIELDSET
+   ========================================================= */
+
+fieldset {
+    margin: 28px 0;
+    padding: 24px;
+
+    background: rgba(248, 250, 252, 0.45);
+
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    border-radius: 10px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+legend {
+    padding: 0 10px;
+
+    color: #12355b;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RADIO / CHECKBOX
+   ========================================================= */
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.38);
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.option:hover {
+    background: rgba(237, 245, 251, 0.72);
+
+    border-color: rgba(31, 95, 139, 0.25);
+}
+
+.option input {
+    flex: 0 0 auto;
+
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.info-box {
+    margin: 25px 0;
+    padding: 18px 20px;
+
+    background: rgba(238, 247, 255, 0.65);
+
+    border: 1px solid rgba(199, 225, 245, 0.8);
+    border-left: 5px solid #1f5f8b;
+
+    border-radius: 8px;
+
+    color: #334155;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.info-box strong {
+    color: #12355b;
+}
+
+
+/* =========================================================
+   WARNING BOX
+   ========================================================= */
+
+.warning-box {
+    margin: 25px 0;
+    padding: 18px 20px;
+
+    background: rgba(255, 247, 237, 0.72);
+
+    border: 1px solid rgba(254, 215, 170, 0.85);
+    border-left: 5px solid #ea580c;
+
+    border-radius: 8px;
+
+    color: #7c2d12;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-message {
+    display: none;
+
+    margin-top: 8px;
+
+    color: #b91c1c;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.input-error {
+    border-color: #b91c1c !important;
+
+    background: rgba(255, 250, 250, 0.78);
+}
+
+.input-error:focus {
+    outline-color: rgba(185, 28, 28, 0.2);
+}
+
+
+/* =========================================================
+   CONDITIONAL FIELDS
+   ========================================================= */
+
+.conditional-field {
+    display: none;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    background: rgba(248, 250, 252, 0.48);
+
+    border: 1px solid rgba(219, 227, 235, 0.7);
+    border-left: 4px solid #1f5f8b;
+
+    border-radius: 8px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.conditional-field.show {
+    display: block;
+}
+
+.conditional-field[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   BUTTON GROUP
+   ========================================================= */
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+   ========================================================= */
+
+.button,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.button:hover,
+button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.button-primary {
+    background: #12355b;
+    color: #ffffff;
+
+    border: 2px solid #12355b;
+}
+
+.button-primary:hover {
+    background: #0c2743;
+    border-color: #0c2743;
+
+    box-shadow:
+        0 5px 15px rgba(18, 53, 91, 0.2);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.55);
+    color: #12355b;
+
+    border: 2px solid #12355b;
+}
+
+.button-secondary:hover {
+    background: rgba(241, 245, 249, 0.8);
+}
+
+
+/* =========================================================
+   APPLICATION PAGE LAYOUT
+   ========================================================= */
+
+.page-container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 0 20px 40px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin: 0 -20px;
+    padding: 30px;
+
+    background: rgba(18, 53, 91, 0.86);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 16px rgba(18, 53, 91, 0.18);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.page-header h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1.9rem;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+
+    color: #dceaf5;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.step-indicator {
+    flex-shrink: 0;
+
+    padding: 9px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #12355b;
+
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   MULTI-STEP PROGRESS BAR
+   ========================================================= */
+
+.progress-bar {
+    margin: 28px 0;
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(31, 41, 55, 0.06);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.progress-bar ol {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.progress-bar li {
+    position: relative;
+
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.progress-bar li span:first-child {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 2px solid #9ca3af;
+    border-radius: 50%;
+
+    color: #64748b;
+
+    font-weight: 700;
+}
+
+.progress-bar li.completed,
+.progress-bar li.current {
+    color: #12355b;
+}
+
+.progress-bar li.completed span:first-child,
+.progress-bar li.current span:first-child {
+    background: #12355b;
+    border-color: #12355b;
+
+    color: #ffffff;
+}
+
+.progress-bar li.current {
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.form-section {
+    background: rgba(255, 255, 255, 0.60);
+
+    padding: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    color: #12355b;
+
+    font-size: 1.55rem;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #475569;
+
+    max-width: 720px;
+}
+
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   RADIO GROUP
+   ========================================================= */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+
+    gap: 10px;
+
+    margin: 0;
+    padding: 11px 14px;
+
+    background: rgba(255, 255, 255, 0.42);
+
+    border: 1px solid rgba(209, 213, 219, 0.8);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.radio-group label:hover {
+    background: rgba(237, 245, 251, 0.72);
+
+    border-color: #1f5f8b;
+}
+
+.radio-group input {
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   NESTED FIELDSET
+   ========================================================= */
+
+.nested-fieldset {
+    margin: 0;
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.32);
+}
+
+
+/* =========================================================
+   REQUIRED NOTE
+   ========================================================= */
+
+.required-note {
+    margin: 20px 0;
+
+    color: #475569;
+
+    font-size: 0.9rem;
+}
+
+.required-note span {
+    color: #b91c1c;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 32px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* =========================================================
+   PRIMARY APPLICATION BUTTON
+   ========================================================= */
+
+.primary-button {
+    background: #12355b;
+    color: #ffffff;
+
+    border: 2px solid #12355b;
+}
+
+.primary-button:hover {
+    background: #0c2743;
+    border-color: #0c2743;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(18, 53, 91, 0.2);
+}
+
+
+/* =========================================================
+   SECONDARY APPLICATION BUTTON
+   ========================================================= */
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.55);
+    color: #12355b;
+
+    border: 2px solid #12355b;
+}
+
+.secondary-button:hover {
+    background: rgba(241, 245, 249, 0.8);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CURRENCY INPUT
+   ========================================================= */
+
+.input-with-prefix {
+    display: flex;
+    align-items: stretch;
+}
+
+.input-with-prefix > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 48px;
+
+    padding: 0 12px;
+
+    background: rgba(243, 244, 246, 0.72);
+
+    border: 1.5px solid rgba(156, 163, 175, 0.7);
+    border-right: 0;
+
+    border-radius: 8px 0 0 8px;
+
+    color: #374151;
+    font-weight: 700;
+}
+
+.input-with-prefix input {
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* =========================================================
+   HOUSEHOLD MEMBER / INCOME ENTRY
+   ========================================================= */
+
+.household-member,
+.income-entry {
+    margin: 20px 0;
+    padding: 24px;
+
+    background: rgba(248, 250, 252, 0.45);
+
+    border: 1px solid rgba(214, 222, 232, 0.7);
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 7px rgba(31, 41, 55, 0.04);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.member-header h3 {
+    margin: 0;
+
+    color: #12355b;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+   ========================================================= */
+
+.remove-member,
+.remove-income {
+    min-height: 40px;
+
+    padding: 8px 13px;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    color: #b91c1c;
+
+    border: 1px solid #b91c1c;
+    border-radius: 7px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.remove-member:hover,
+.remove-income:hover {
+    background: rgba(254, 242, 242, 0.85);
+}
+
+
+/* =========================================================
+   FORM STATUS
+   ========================================================= */
+
+.form-status {
+    min-height: 24px;
+
+    margin: 15px 0;
+
+    color: #047857;
+
+    font-weight: 700;
+}
+
+.form-status:empty {
+    min-height: 0;
+}
+
+
+/* =========================================================
+   INCOME / RESOURCE SUMMARY
+   ========================================================= */
+
+.income-summary {
+    margin: 30px 0;
+    padding: 28px;
+
+    background: rgba(238, 247, 255, 0.60);
+
+    border: 1px solid rgba(191, 219, 254, 0.8);
+    border-radius: 12px;
+
+    text-align: center;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.income-summary h2 {
+    margin-top: 0;
+
+    color: #12355b;
+}
+
+.summary-amount {
+    margin: 10px 0;
+
+    color: #12355b;
+
+    font-size: 2.1rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   REVIEW PAGE
+   ========================================================= */
+
+.review-section {
+    margin: 25px 0;
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    border: 1px solid rgba(214, 222, 232, 0.75);
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(31, 41, 55, 0.05);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.review-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid rgba(229, 231, 235, 0.75);
+}
+
+.review-section-header h2 {
+    margin: 0;
+
+    color: #12355b;
+}
+
+.edit-link {
+    color: #1f5f8b;
+
+    font-weight: 700;
+}
+
+.edit-link:hover {
+    color: #12355b;
+}
+
+
+/* =========================================================
+   REVIEW LIST
+   ========================================================= */
+
+.review-list {
+    margin: 0;
+}
+
+.review-list > div {
+    display: grid;
+
+    grid-template-columns:
+        minmax(200px, 1fr) 2fr;
+
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.review-list > div:last-child {
+    border-bottom: 0;
+}
+
+.review-list dt {
+    color: #374151;
+
+    font-weight: 700;
+}
+
+.review-list dd {
+    margin: 0;
+
+    color: #111827;
+}
+
+.review-total {
+    margin-top: 8px;
+
+    padding-top: 18px !important;
+
+    color: #12355b;
+
+    font-size: 1.08rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   REVIEW MEMBERS
+   ========================================================= */
+
+.review-members {
+    margin-top: 25px;
+}
+
+.review-member-list {
+    display: grid;
+
+    gap: 12px;
+}
+
+.review-member-card {
+    padding: 17px;
+
+    background: rgba(248, 250, 252, 0.48);
+
+    border: 1px solid rgba(214, 222, 232, 0.7);
+    border-radius: 8px;
+}
+
+.review-member-card h4 {
+    margin: 0 0 5px;
+
+    color: #12355b;
+}
+
+.review-member-card p {
+    margin: 0;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   CONFIRMATION
+   ========================================================= */
+
+.confirmation-section {
+    margin-top: 30px;
+}
+
+.confirmation-box {
+    padding: 22px;
+
+    background: rgba(248, 250, 252, 0.48);
+
+    border: 1px solid rgba(214, 222, 232, 0.75);
+    border-radius: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.checkbox-label input {
+    flex: 0 0 auto;
+
+    width: 22px;
+    height: 22px;
+
+    margin: 2px 0 0;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.success-message {
+    margin-top: 25px;
+    padding: 20px;
+
+    background: rgba(236, 253, 245, 0.72);
+
+    border: 1px solid rgba(134, 239, 172, 0.85);
+    border-left: 5px solid #047857;
+
+    border-radius: 9px;
+
+    color: #065f46;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   FOOTERS
+   ========================================================= */
+
+.site-footer {
+    margin-top: 50px;
+    padding: 28px 20px;
+
+    background: rgba(18, 53, 91, 0.88);
+
+    color: #ffffff;
+
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.page-footer {
+    margin-top: 30px;
+    padding: 20px;
+
+    color: #475569;
+
+    text-align: center;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   DISABLED BUTTON
+   ========================================================= */
+
+button:disabled,
+.primary-button:disabled,
+.secondary-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SCREEN READER ONLY
+   ========================================================= */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+
+        background-attachment: scroll;
+    }
+
+    .site-header {
+        padding: 24px 15px;
+    }
+
+    .site-title {
+        font-size: 1.55rem;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .form-card {
+        padding: 24px 18px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button,
+    button {
+        width: 100%;
+    }
+
+    .page-container {
+        padding: 0 12px 30px;
+    }
+
+    .page-header {
+        flex-direction: column;
+
+        margin: 0 -12px;
+
+        padding: 24px 18px;
+    }
+
+    .page-header h1 {
+        font-size: 1.55rem;
+    }
+
+    .step-indicator {
+        align-self: flex-start;
+    }
+
+    .progress-bar {
+        overflow-x: auto;
+
+        padding: 18px 12px;
+    }
+
+    .progress-bar ol {
+        min-width: 620px;
+    }
+
+    .form-section {
+        padding: 25px 18px;
+
+        border-radius: 10px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .member-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .remove-member,
+    .remove-income {
+        width: 100%;
+    }
+
+    .review-section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .review-list > div {
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+    }
+
+    .summary-amount {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .page-header {
+        padding: 22px 15px;
+    }
+
+    .progress-bar ol {
+        min-width: 560px;
+    }
+
+    .form-section {
+        padding: 22px 15px;
+    }
+
+    fieldset {
+        padding: 18px 15px;
+    }
+
+    .household-member,
+    .income-entry {
+        padding: 18px;
+    }
+
+    .site-title {
+        font-size: 1.4rem;
+    }
+}

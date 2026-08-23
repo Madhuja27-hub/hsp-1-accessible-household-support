@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Resources | Household Support Application</title>
+
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+  <main class="page-container">
+
+    <!-- HEADER -->
+    <header class="page-header">
+
+      <div>
+        <p class="eyebrow">FORM HSP-1</p>
+        <h1>Application for Household Support</h1>
+      </div>
+
+      <span class="step-indicator">
+        Step 4 of 6
+      </span>
+
+    </header>
+
+
+    <!-- PROGRESS BAR -->
+    <nav class="progress-bar" aria-label="Application progress">
+
+      <ol>
+
+        <li class="completed">
+          <span>1</span>
+          <span>Applicant</span>
+        </li>
+
+        <li class="completed">
+          <span>2</span>
+          <span>Household</span>
+        </li>
+
+        <li class="completed">
+          <span>3</span>
+          <span>Income</span>
+        </li>
+
+        <li class="current" aria-current="step">
+          <span>4</span>
+          <span>Resources</span>
+        </li>
+
+        <li>
+          <span>5</span>
+          <span>Review</span>
+        </li>
+
+        <li>
+          <span>6</span>
+          <span>Declaration</span>
+        </li>
+
+      </ol>
+
+    </nav>
+
+
+    <!-- FORM SECTION -->
+    <section class="form-section" aria-labelledby="resources-heading">
+
+      <div class="section-heading">
+
+        <h2 id="resources-heading">
+          Resources and Assets
+        </h2>
+
+        <p>
+          Tell us about the assets and resources available to your
+          household. If you do not have an item, enter 0 or select
+          "None" where available.
+        </p>
+
+      </div>
+
+
+      <!-- INFORMATION BOX -->
+      <div class="info-box" role="note">
+
+        <strong>
+          Why do we ask about resources?
+        </strong>
+
+        <p>
+          This information helps determine whether your household
+          qualifies for support. You do not need to provide information
+          that does not apply to your household.
+        </p>
+
+      </div>
+
+
+      <!-- FORM -->
+      <form id="resourcesForm" novalidate>
+
+
+        <!-- BANK ACCOUNTS -->
+        <fieldset>
+
+          <legend>Bank accounts and cash</legend>
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="checkingBalance">
+                Checking or current account balance
+              </label>
+
+              <div class="input-with-prefix">
+
+                <span aria-hidden="true">₹</span>
+
+                <input
+                  type="number"
+                  id="checkingBalance"
+                  name="checkingBalance"
+                  min="0"
+                  step="0.01"
+                  inputmode="decimal"
+                  value="0"
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="savingsBalance">
+                Savings account balance
+              </label>
+
+              <div class="input-with-prefix">
+
+                <span aria-hidden="true">₹</span>
+
+                <input
+                  type="number"
+                  id="savingsBalance"
+                  name="savingsBalance"
+                  min="0"
+                  step="0.01"
+                  inputmode="decimal"
+                  value="0"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="cashOnHand">
+              Cash currently available
+            </label>
+
+            <div class="input-with-prefix">
+
+              <span aria-hidden="true">₹</span>
+
+              <input
+                type="number"
+                id="cashOnHand"
+                name="cashOnHand"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                value="0"
+              >
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- PROPERTY AND VEHICLES -->
+        <fieldset>
+
+          <legend>Property and vehicles</legend>
+
+
+          <!-- PROPERTY QUESTION -->
+          <div class="form-group">
+
+            <label>
+              Does anyone in your household own a home or other property?
+              <span class="required" aria-hidden="true">*</span>
+            </label>
+
+            <div class="radio-group">
+
+              <label>
+                <input
+                  type="radio"
+                  name="ownsProperty"
+                  value="yes"
+                  required
+                >
+                Yes
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="ownsProperty"
+                  value="no"
+                >
+                No
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROPERTY DETAILS -->
+          <div
+            id="propertyDetails"
+            class="conditional-field"
+            hidden
+          >
+
+            <div class="form-group">
+
+              <label for="propertyValue">
+                Estimated property value
+              </label>
+
+              <div class="input-with-prefix">
+
+                <span aria-hidden="true">₹</span>
+
+                <input
+                  type="number"
+                  id="propertyValue"
+                  name="propertyValue"
+                  min="0"
+                  step="0.01"
+                  inputmode="decimal"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- VEHICLE QUESTION -->
+          <div class="form-group">
+
+            <label>
+              Does anyone in your household own a vehicle?
+              <span class="required" aria-hidden="true">*</span>
+            </label>
+
+            <div class="radio-group">
+
+              <label>
+                <input
+                  type="radio"
+                  name="ownsVehicle"
+                  value="yes"
+                  required
+                >
+                Yes
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="ownsVehicle"
+                  value="no"
+                >
+                No
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <!-- VEHICLE DETAILS -->
+          <div
+            id="vehicleDetails"
+            class="conditional-field"
+            hidden
+          >
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="vehicleCount">
+                  Number of vehicles
+                </label>
+
+                <input
+                  type="number"
+                  id="vehicleCount"
+                  name="vehicleCount"
+                  min="1"
+                  max="20"
+                  value="1"
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="vehicleValue">
+                  Estimated total vehicle value
+                </label>
+
+                <div class="input-with-prefix">
+
+                  <span aria-hidden="true">₹</span>
+
+                  <input
+                    type="number"
+                    id="vehicleValue"
+                    name="vehicleValue"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal"
+                  >
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- INVESTMENTS -->
+        <fieldset>
+
+          <legend>Investments and other assets</legend>
+
+
+          <div class="form-group">
+
+            <label for="investments">
+              Stocks, bonds, mutual funds, or other investments
+            </label>
+
+            <div class="input-with-prefix">
+
+              <span aria-hidden="true">₹</span>
+
+              <input
+                type="number"
+                id="investments"
+                name="investments"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                value="0"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="retirementSavings">
+              Retirement savings
+            </label>
+
+            <div class="input-with-prefix">
+
+              <span aria-hidden="true">₹</span>
+
+              <input
+                type="number"
+                id="retirementSavings"
+                name="retirementSavings"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                value="0"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="otherAssets">
+              Other significant assets
+            </label>
+
+            <div class="input-with-prefix">
+
+              <span aria-hidden="true">₹</span>
+
+              <input
+                type="number"
+                id="otherAssets"
+                name="otherAssets"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                value="0"
+              >
+
+            </div>
+
+            <p class="help-text">
+              Include valuable assets that were not listed above.
+            </p>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- SUMMARY -->
+        <section
+          class="income-summary"
+          aria-labelledby="resources-summary-heading"
+        >
+
+          <h2 id="resources-summary-heading">
+            Estimated Total Resources
+          </h2>
+
+          <p class="summary-amount">
+
+            <span aria-hidden="true">₹</span>
+
+            <output
+              id="totalResources"
+              aria-live="polite"
+            >
+              0.00
+            </output>
+
+          </p>
+
+          <p class="help-text">
+            This estimate is calculated from the values entered above.
+          </p>
+
+        </section>
+
+
+        <!-- ADDITIONAL INFORMATION -->
+        <fieldset>
+
+          <legend>Additional information</legend>
+
+          <div class="form-group">
+
+            <label for="resourceExplanation">
+              Is there anything else about your household's resources
+              that you would like us to know?
+            </label>
+
+            <textarea
+              id="resourceExplanation"
+              name="resourceExplanation"
+              rows="5"
+              maxlength="1000"
+              aria-describedby="resourceExplanationHelp"
+            ></textarea>
+
+            <p
+              class="help-text"
+              id="resourceExplanationHelp"
+            >
+              Optional. You can leave this blank if it does not apply.
+            </p>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- REQUIRED NOTE -->
+        <div class="required-note">
+
+          <span aria-hidden="true">*</span>
+          Required fields
+
+        </div>
+
+
+        <!-- STATUS -->
+        <div
+          id="formStatus"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- BUTTONS -->
+        <div class="form-actions">
+
+          <a
+            href="income.html"
+            class="secondary-button"
+          >
+            Back
+          </a>
+
+
+          <button
+            type="button"
+            id="saveButton"
+            class="secondary-button"
+          >
+            Save and exit
+          </button>
+
+
+          <button
+            type="submit"
+            class="primary-button"
+          >
+            Review application
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+
+      <p>
+        Your information is used only to process your Household Support
+        application.
+      </p>
+
+    </footer>
+
+  </main>
+
+
+  <script src="../../js/app.js"></script>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const STORAGE_KEY = "resourcesApplication";
+
+      const form = document.getElementById("resourcesForm");
+
+      const propertyDetails =
+        document.getElementById("propertyDetails");
+
+      const vehicleDetails =
+        document.getElementById("vehicleDetails");
+
+      const propertyValue =
+        document.getElementById("propertyValue");
+
+      const vehicleCount =
+        document.getElementById("vehicleCount");
+
+      const vehicleValue =
+        document.getElementById("vehicleValue");
+
+      const totalResources =
+        document.getElementById("totalResources");
+
+      const saveButton =
+        document.getElementById("saveButton");
+
+      const formStatus =
+        document.getElementById("formStatus");
+
+
+      /* =========================================
+         GET NUMBER
+      ========================================= */
+
+      function getNumber(id) {
+
+        const element =
+          document.getElementById(id);
+
+        if (!element || element.value === "") {
+          return 0;
+        }
+
+        const value = Number(element.value);
+
+        return Number.isFinite(value)
+          ? value
+          : 0;
+
+      }
+
+
+      /* =========================================
+         CALCULATE TOTAL RESOURCES
+      ========================================= */
+
+      function calculateResources() {
+
+        const total =
+          getNumber("checkingBalance") +
+          getNumber("savingsBalance") +
+          getNumber("cashOnHand") +
+          getNumber("propertyValue") +
+          getNumber("vehicleValue") +
+          getNumber("investments") +
+          getNumber("retirementSavings") +
+          getNumber("otherAssets");
+
+
+        totalResources.textContent =
+          total.toLocaleString("en-IN", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+
+      }
+
+
+      /* =========================================
+         PROPERTY CONDITIONAL FIELD
+      ========================================= */
+
+      function updatePropertyFields() {
+
+        const selected =
+          document.querySelector(
+            'input[name="ownsProperty"]:checked'
+          );
+
+        const ownsProperty =
+          selected &&
+          selected.value === "yes";
+
+
+        propertyDetails.hidden =
+          !ownsProperty;
+
+
+        propertyValue.required =
+          !!ownsProperty;
+
+
+        if (!ownsProperty) {
+          propertyValue.value = "";
+        }
+
+
+        calculateResources();
+
+      }
+
+
+      /* =========================================
+         VEHICLE CONDITIONAL FIELD
+      ========================================= */
+
+      function updateVehicleFields() {
+
+        const selected =
+          document.querySelector(
+            'input[name="ownsVehicle"]:checked'
+          );
+
+        const ownsVehicle =
+          selected &&
+          selected.value === "yes";
+
+
+        vehicleDetails.hidden =
+          !ownsVehicle;
+
+
+        vehicleCount.required =
+          !!ownsVehicle;
+
+        vehicleValue.required =
+          !!ownsVehicle;
+
+
+        if (!ownsVehicle) {
+
+          vehicleCount.value = "";
+          vehicleValue.value = "";
+
+        }
+
+
+        calculateResources();
+
+      }
+
+
+      /* =========================================
+         SAVE DATA TO LOCAL STORAGE
+      ========================================= */
+
+      function saveForm(showMessage = false) {
+
+        const data = {};
+
+        const elements =
+          form.querySelectorAll(
+            "input, textarea, select"
+          );
+
+
+        elements.forEach(function (element) {
+
+          if (!element.name) {
+            return;
+          }
+
+
+          if (
+            (element.type === "radio" ||
+             element.type === "checkbox") &&
+            !element.checked
+          ) {
+            return;
+          }
+
+
+          data[element.name] =
+            element.value;
+
+        });
+
+
+        data.totalResources =
+          totalResources.textContent.replace(
+            /,/g,
+            ""
+          );
+
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(data)
+        );
+
+
+        if (showMessage) {
+
+          formStatus.textContent =
+            "Your resource information has been saved on this device.";
+
+        }
+
+      }
+
+
+      /* =========================================
+         LOAD DATA FROM LOCAL STORAGE
+      ========================================= */
+
+      function loadSavedData() {
+
+        try {
+
+          const saved =
+            localStorage.getItem(STORAGE_KEY);
+
+
+          if (!saved) {
+            return;
+          }
+
+
+          const data =
+            JSON.parse(saved);
+
+
+          Object.keys(data).forEach(function (key) {
+
+            if (key === "totalResources") {
+              return;
+            }
+
+
+            const elements =
+              form.querySelectorAll(
+                `[name="${key}"]`
+              );
+
+
+            if (!elements.length) {
+              return;
+            }
+
+
+            elements.forEach(function (element) {
+
+              if (
+                element.type === "radio"
+              ) {
+
+                if (
+                  element.value === data[key]
+                ) {
+
+                  element.checked = true;
+
+                }
+
+              } else {
+
+                element.value =
+                  data[key];
+
+              }
+
+            });
+
+          });
+
+
+        } catch (error) {
+
+          console.error(
+            "Could not load saved resource data:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /* =========================================
+         AUTO SAVE
+      ========================================= */
+
+      function autoSave() {
+
+        calculateResources();
+
+        saveForm(false);
+
+      }
+
+
+      /* =========================================
+         EVENT LISTENERS
+      ========================================= */
+
+
+      document
+        .querySelectorAll(
+          'input[name="ownsProperty"]'
+        )
+        .forEach(function (radio) {
+
+          radio.addEventListener(
+            "change",
+            function () {
+
+              updatePropertyFields();
+              autoSave();
+
+            }
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(
+          'input[name="ownsVehicle"]'
+        )
+        .forEach(function (radio) {
+
+          radio.addEventListener(
+            "change",
+            function () {
+
+              updateVehicleFields();
+              autoSave();
+
+            }
+          );
+
+        });
+
+
+      form
+        .querySelectorAll(
+          "input, textarea, select"
+        )
+        .forEach(function (element) {
+
+          element.addEventListener(
+            "input",
+            autoSave
+          );
+
+
+          element.addEventListener(
+            "change",
+            autoSave
+          );
+
+        });
+
+
+      /* =========================================
+         SAVE BUTTON
+      ========================================= */
+
+      saveButton.addEventListener(
+        "click",
+        function () {
+
+          calculateResources();
+
+          saveForm(true);
+
+        }
+      );
+
+
+      /* =========================================
+         FORM SUBMIT
+      ========================================= */
+
+      form.addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          updatePropertyFields();
+          updateVehicleFields();
+
+
+          if (!form.checkValidity()) {
+
+            form.reportValidity();
+
+            formStatus.textContent =
+              "Please complete the required fields before continuing.";
+
+            return;
+
+          }
+
+
+          calculateResources();
+
+          saveForm(false);
+
+
+          window.location.href =
+            "review.html";
+
+        }
+      );
+
+
+      /* =========================================
+         PAGE LOAD
+      ========================================= */
+
+      loadSavedData();
+
+      updatePropertyFields();
+
+      updateVehicleFields();
+
+      calculateResources();
+
+    });
+
+  </script>
+
+</body>
+
+</html>

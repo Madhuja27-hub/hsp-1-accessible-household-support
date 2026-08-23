@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Income Information | Household Support Application</title>
+
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+    <main id="main-content" class="page-container">
+
+        <!-- HEADER -->
+        <header class="page-header">
+
+            <div>
+                <p class="eyebrow">FORM HSP-1</p>
+
+                <h1>Application for Household Support</h1>
+            </div>
+
+            <span class="step-indicator">
+                Step 3 of 6
+            </span>
+
+        </header>
+
+
+        <!-- PROGRESS BAR -->
+        <nav
+            class="progress-bar"
+            aria-label="Application progress"
+        >
+
+            <ol>
+
+                <li class="completed">
+                    <span>1</span>
+                    <span>Applicant</span>
+                </li>
+
+                <li class="completed">
+                    <span>2</span>
+                    <span>Household</span>
+                </li>
+
+                <li
+                    class="current"
+                    aria-current="step"
+                >
+                    <span>3</span>
+                    <span>Income</span>
+                </li>
+
+                <li>
+                    <span>4</span>
+                    <span>Resources</span>
+                </li>
+
+                <li>
+                    <span>5</span>
+                    <span>Review</span>
+                </li>
+
+                <li>
+                    <span>6</span>
+                    <span>Declaration</span>
+                </li>
+
+            </ol>
+
+        </nav>
+
+
+        <!-- INCOME FORM -->
+        <section
+            class="form-section"
+            aria-labelledby="income-heading"
+        >
+
+            <div class="section-heading">
+
+                <h2 id="income-heading">
+                    Income Information
+                </h2>
+
+                <p>
+                    Tell us about the income received by everyone in
+                    your household. Use monthly amounts.
+                </p>
+
+            </div>
+
+
+            <!-- INFORMATION BOX -->
+            <div
+                class="info-box"
+                role="note"
+            >
+
+                <strong>
+                    What should you report?
+                </strong>
+
+                <p>
+                    Include wages, self-employment income, pensions,
+                    benefits, child support, and other regular income
+                    received by household members.
+                </p>
+
+            </div>
+
+
+            <form
+                id="incomeForm"
+                novalidate
+            >
+
+
+                <!-- EMPLOYMENT INCOME -->
+                <fieldset>
+
+                    <legend>
+                        Employment income
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Does anyone in your household receive income
+                            from employment?
+
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >*</span>
+                        </label>
+
+
+                        <div class="radio-group">
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="hasEmploymentIncome"
+                                    value="yes"
+                                    required
+                                >
+
+                                Yes
+
+                            </label>
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="hasEmploymentIncome"
+                                    value="no"
+                                >
+
+                                No
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMPLOYMENT DETAILS -->
+                    <div
+                        id="employmentDetails"
+                        class="conditional-field"
+                        hidden
+                    >
+
+                        <p class="help-text">
+                            Add details for each person in your household
+                            who receives employment income.
+                        </p>
+
+
+                        <div
+                            id="employmentEntries"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <button
+                            type="button"
+                            id="addEmploymentBtn"
+                            class="secondary-button"
+                        >
+                            + Add another employment
+                        </button>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- OTHER INCOME -->
+                <fieldset>
+
+                    <legend>
+                        Other income
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label for="pensionIncome">
+                            Monthly pension or retirement income
+                        </label>
+
+
+                        <div class="input-with-prefix">
+
+                            <span aria-hidden="true">
+                                ₹
+                            </span>
+
+
+                            <input
+                                type="number"
+                                id="pensionIncome"
+                                name="pensionIncome"
+                                min="0"
+                                step="0.01"
+                                inputmode="decimal"
+                                value="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="governmentBenefits">
+                            Monthly government benefits or assistance
+                        </label>
+
+
+                        <div class="input-with-prefix">
+
+                            <span aria-hidden="true">
+                                ₹
+                            </span>
+
+
+                            <input
+                                type="number"
+                                id="governmentBenefits"
+                                name="governmentBenefits"
+                                min="0"
+                                step="0.01"
+                                inputmode="decimal"
+                                value="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="childSupport">
+                            Monthly child support received
+                        </label>
+
+
+                        <div class="input-with-prefix">
+
+                            <span aria-hidden="true">
+                                ₹
+                            </span>
+
+
+                            <input
+                                type="number"
+                                id="childSupport"
+                                name="childSupport"
+                                min="0"
+                                step="0.01"
+                                inputmode="decimal"
+                                value="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="otherIncome">
+                            Other monthly income
+                        </label>
+
+
+                        <div class="input-with-prefix">
+
+                            <span aria-hidden="true">
+                                ₹
+                            </span>
+
+
+                            <input
+                                type="number"
+                                id="otherIncome"
+                                name="otherIncome"
+                                min="0"
+                                step="0.01"
+                                inputmode="decimal"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <p class="help-text">
+                            Include regular income that does not fit
+                            into the categories above.
+                        </p>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- INCOME FREQUENCY -->
+                <fieldset>
+
+                    <legend>
+                        Income frequency
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label for="incomeFrequency">
+
+                            How often does your household usually
+                            receive income?
+
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >*</span>
+
+                        </label>
+
+
+                        <select
+                            id="incomeFrequency"
+                            name="incomeFrequency"
+                            required
+                        >
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option value="weekly">
+                                Weekly
+                            </option>
+
+                            <option value="biweekly">
+                                Every two weeks
+                            </option>
+
+                            <option value="monthly">
+                                Monthly
+                            </option>
+
+                            <option value="irregular">
+                                Irregular or varies
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- INCOME CHANGES -->
+                <fieldset>
+
+                    <legend>
+                        Income changes
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Has your household income changed
+                            significantly in the last 3 months?
+
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >*</span>
+
+                        </label>
+
+
+                        <div class="radio-group">
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="incomeChanged"
+                                    value="yes"
+                                    required
+                                >
+
+                                Yes
+
+                            </label>
+
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="incomeChanged"
+                                    value="no"
+                                >
+
+                                No
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONDITIONAL CHANGE DETAILS -->
+                    <div
+                        id="incomeChangeDetails"
+                        class="form-group conditional-field"
+                        hidden
+                    >
+
+                        <label for="incomeChangeReason">
+                            Please explain the change
+                        </label>
+
+
+                        <textarea
+                            id="incomeChangeReason"
+                            name="incomeChangeReason"
+                            rows="4"
+                            maxlength="500"
+                        ></textarea>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- INCOME SUMMARY -->
+                <section
+                    class="income-summary"
+                    aria-labelledby="summary-heading"
+                >
+
+                    <h2 id="summary-heading">
+                        Estimated Monthly Household Income
+                    </h2>
+
+
+                    <p class="summary-amount">
+
+                        <span aria-hidden="true">
+                            ₹
+                        </span>
+
+                        <output
+                            id="totalIncome"
+                            aria-live="polite"
+                        >
+                            0.00
+                        </output>
+
+                    </p>
+
+
+                    <p class="help-text">
+                        This is an estimate based on the amounts
+                        entered above.
+                    </p>
+
+                </section>
+
+
+                <!-- REQUIRED NOTE -->
+                <div class="required-note">
+
+                    <span aria-hidden="true">*</span>
+
+                    Required fields
+
+                </div>
+
+
+                <!-- FORM STATUS -->
+                <div
+                    id="formStatus"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-actions">
+
+                    <a
+                        href="household.html"
+                        class="secondary-button"
+                    >
+                        Back
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="saveButton"
+                        class="secondary-button"
+                    >
+                        Save and exit
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save and Continue
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+
+            <p>
+                Your information is used only to process your
+                Household Support application.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                const form =
+                    document.getElementById("incomeForm");
+
+                const employmentDetails =
+                    document.getElementById(
+                        "employmentDetails"
+                    );
+
+                const employmentEntries =
+                    document.getElementById(
+                        "employmentEntries"
+                    );
+
+                const addEmploymentBtn =
+                    document.getElementById(
+                        "addEmploymentBtn"
+                    );
+
+                const incomeChangeDetails =
+                    document.getElementById(
+                        "incomeChangeDetails"
+                    );
+
+                const incomeChangeReason =
+                    document.getElementById(
+                        "incomeChangeReason"
+                    );
+
+                const totalIncome =
+                    document.getElementById(
+                        "totalIncome"
+                    );
+
+                const saveButton =
+                    document.getElementById(
+                        "saveButton"
+                    );
+
+                const formStatus =
+                    document.getElementById(
+                        "formStatus"
+                    );
+
+
+                /*
+                 * GET NUMBER SAFELY
+                 */
+
+                function getNumber(value) {
+
+                    const number =
+                        Number(value);
+
+                    return Number.isFinite(number)
+                        ? number
+                        : 0;
+
+                }
+
+
+                /*
+                 * ADD EMPLOYMENT ENTRY
+                 */
+
+                function addEmploymentEntry(
+                    employer = "",
+                    amount = ""
+                ) {
+
+                    const entry =
+                        document.createElement("div");
+
+                    entry.className =
+                        "employment-entry form-row";
+
+
+                    entry.innerHTML = `
+
+                        <div class="form-group">
+
+                            <label>
+                                Employer name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="employerName"
+                                value="${employer}"
+                                autocomplete="organization"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Monthly salary
+                            </label>
+
+                            <div class="input-with-prefix">
+
+                                <span aria-hidden="true">
+                                    ₹
+                                </span>
+
+                                <input
+                                    type="number"
+                                    name="employmentAmount"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                    value="${amount}"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <button
+                                type="button"
+                                class="secondary-button remove-employment"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    `;
+
+
+                    employmentEntries.appendChild(
+                        entry
+                    );
+
+
+                    const salaryInput =
+                        entry.querySelector(
+                            'input[name="employmentAmount"]'
+                        );
+
+
+                    salaryInput.addEventListener(
+                        "input",
+                        calculateTotal
+                    );
+
+
+                    entry
+                        .querySelector(
+                            ".remove-employment"
+                        )
+                        .addEventListener(
+                            "click",
+                            function () {
+
+                                entry.remove();
+
+                                calculateTotal();
+
+                            }
+                        );
+
+                }
+
+
+                /*
+                 * UPDATE EMPLOYMENT SECTION
+                 */
+
+                function updateEmploymentFields() {
+
+                    const selected =
+                        document.querySelector(
+                            'input[name="hasEmploymentIncome"]:checked'
+                        );
+
+
+                    const hasEmployment =
+                        selected &&
+                        selected.value === "yes";
+
+
+                    employmentDetails.hidden =
+                        !hasEmployment;
+
+
+                    if (hasEmployment) {
+
+                        if (
+                            employmentEntries.children.length === 0
+                        ) {
+
+                            addEmploymentEntry();
+
+                        }
+
+                    } else {
+
+                        employmentEntries.innerHTML = "";
+
+                        calculateTotal();
+
+                    }
+
+                }
+
+
+                /*
+                 * UPDATE INCOME CHANGE SECTION
+                 */
+
+                function updateIncomeChangeFields() {
+
+                    const selected =
+                        document.querySelector(
+                            'input[name="incomeChanged"]:checked'
+                        );
+
+
+                    const hasChanged =
+                        selected &&
+                        selected.value === "yes";
+
+
+                    incomeChangeDetails.hidden =
+                        !hasChanged;
+
+
+                    incomeChangeReason.required =
+                        hasChanged;
+
+
+                    if (!hasChanged) {
+
+                        incomeChangeReason.value = "";
+
+                    }
+
+                }
+
+
+                /*
+                 * CALCULATE TOTAL INCOME
+                 */
+
+                function calculateTotal() {
+
+                    let total = 0;
+
+
+                    document
+                        .querySelectorAll(
+                            'input[name="employmentAmount"]'
+                        )
+                        .forEach(
+                            function (input) {
+
+                                total +=
+                                    getNumber(
+                                        input.value
+                                    );
+
+                            }
+                        );
+
+
+                    total += getNumber(
+                        document.getElementById(
+                            "pensionIncome"
+                        ).value
+                    );
+
+
+                    total += getNumber(
+                        document.getElementById(
+                            "governmentBenefits"
+                        ).value
+                    );
+
+
+                    total += getNumber(
+                        document.getElementById(
+                            "childSupport"
+                        ).value
+                    );
+
+
+                    total += getNumber(
+                        document.getElementById(
+                            "otherIncome"
+                        ).value
+                    );
+
+
+                    totalIncome.textContent =
+                        total.toLocaleString(
+                            "en-IN",
+                            {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }
+                        );
+
+                }
+
+
+                /*
+                 * SAVE FORM DATA
+                 */
+
+                function saveForm() {
+
+                    const data = {
+
+                        hasEmploymentIncome: "",
+
+                        employerName: [],
+
+                        employmentAmount: [],
+
+                        pensionIncome:
+                            document.getElementById(
+                                "pensionIncome"
+                            ).value || "0",
+
+                        governmentBenefits:
+                            document.getElementById(
+                                "governmentBenefits"
+                            ).value || "0",
+
+                        childSupport:
+                            document.getElementById(
+                                "childSupport"
+                            ).value || "0",
+
+                        otherIncome:
+                            document.getElementById(
+                                "otherIncome"
+                            ).value || "0",
+
+                        incomeFrequency:
+                            document.getElementById(
+                                "incomeFrequency"
+                            ).value,
+
+                        incomeChanged: "",
+
+                        incomeChangeReason:
+                            incomeChangeReason.value,
+
+                        totalIncome:
+                            totalIncome.textContent
+                                .replace(/,/g, "")
+
+                    };
+
+
+                    const employmentChoice =
+                        document.querySelector(
+                            'input[name="hasEmploymentIncome"]:checked'
+                        );
+
+
+                    if (employmentChoice) {
+
+                        data.hasEmploymentIncome =
+                            employmentChoice.value;
+
+                    }
+
+
+                    document
+                        .querySelectorAll(
+                            'input[name="employerName"]'
+                        )
+                        .forEach(
+                            function (input) {
+
+                                data.employerName.push(
+                                    input.value
+                                );
+
+                            }
+                        );
+
+
+                    document
+                        .querySelectorAll(
+                            'input[name="employmentAmount"]'
+                        )
+                        .forEach(
+                            function (input) {
+
+                                data.employmentAmount.push(
+                                    input.value || "0"
+                                );
+
+                            }
+                        );
+
+
+                    const changeChoice =
+                        document.querySelector(
+                            'input[name="incomeChanged"]:checked'
+                        );
+
+
+                    if (changeChoice) {
+
+                        data.incomeChanged =
+                            changeChoice.value;
+
+                    }
+
+
+                    localStorage.setItem(
+                        "incomeApplication",
+                        JSON.stringify(data)
+                    );
+
+
+                    formStatus.textContent =
+                        "Your income information has been saved.";
+
+                }
+
+
+                /*
+                 * LOAD SAVED DATA
+                 */
+
+                function loadSavedData() {
+
+                    let savedData;
+
+
+                    try {
+
+                        savedData =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    "incomeApplication"
+                                )
+                            );
+
+                    } catch (error) {
+
+                        savedData = null;
+
+                    }
+
+
+                    if (!savedData) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Employment choice
+                     */
+
+                    if (
+                        savedData.hasEmploymentIncome
+                    ) {
+
+                        const radio =
+                            document.querySelector(
+                                `input[name="hasEmploymentIncome"][value="${savedData.hasEmploymentIncome}"]`
+                            );
+
+
+                        if (radio) {
+
+                            radio.checked = true;
+
+                        }
+
+                    }
+
+
+                    /*
+                     * Employment entries
+                     */
+
+                    if (
+                        savedData.hasEmploymentIncome === "yes"
+                    ) {
+
+                        employmentDetails.hidden = false;
+
+
+                        const employers =
+                            Array.isArray(
+                                savedData.employerName
+                            )
+                                ? savedData.employerName
+                                : [];
+
+
+                        const amounts =
+                            Array.isArray(
+                                savedData.employmentAmount
+                            )
+                                ? savedData.employmentAmount
+                                : [];
+
+
+                        const count =
+                            Math.max(
+                                employers.length,
+                                amounts.length,
+                                1
+                            );
+
+
+                        for (
+                            let index = 0;
+                            index < count;
+                            index++
+                        ) {
+
+                            addEmploymentEntry(
+                                employers[index] || "",
+                                amounts[index] || ""
+                            );
+
+                        }
+
+                    }
+
+
+                    /*
+                     * Other income
+                     */
+
+                    document.getElementById(
+                        "pensionIncome"
+                    ).value =
+                        savedData.pensionIncome || "0";
+
+
+                    document.getElementById(
+                        "governmentBenefits"
+                    ).value =
+                        savedData.governmentBenefits || "0";
+
+
+                    document.getElementById(
+                        "childSupport"
+                    ).value =
+                        savedData.childSupport || "0";
+
+
+                    document.getElementById(
+                        "otherIncome"
+                    ).value =
+                        savedData.otherIncome || "0";
+
+
+                    /*
+                     * Frequency
+                     */
+
+                    document.getElementById(
+                        "incomeFrequency"
+                    ).value =
+                        savedData.incomeFrequency || "";
+
+
+                    /*
+                     * Income changed
+                     */
+
+                    if (savedData.incomeChanged) {
+
+                        const radio =
+                            document.querySelector(
+                                `input[name="incomeChanged"][value="${savedData.incomeChanged}"]`
+                            );
+
+
+                        if (radio) {
+
+                            radio.checked = true;
+
+                        }
+
+                    }
+
+
+                    if (
+                        savedData.incomeChanged === "yes"
+                    ) {
+
+                        incomeChangeDetails.hidden =
+                            false;
+
+
+                        incomeChangeReason.required =
+                            true;
+
+
+                        incomeChangeReason.value =
+                            savedData.incomeChangeReason || "";
+
+                    }
+
+
+                    calculateTotal();
+
+                }
+
+
+                /*
+                 * EVENT LISTENERS
+                 */
+
+
+                document
+                    .querySelectorAll(
+                        'input[name="hasEmploymentIncome"]'
+                    )
+                    .forEach(
+                        function (radio) {
+
+                            radio.addEventListener(
+                                "change",
+                                updateEmploymentFields
+                            );
+
+                        }
+                    );
+
+
+                addEmploymentBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        addEmploymentEntry();
+
+                    }
+                );
+
+
+                document
+                    .querySelectorAll(
+                        "#pensionIncome, " +
+                        "#governmentBenefits, " +
+                        "#childSupport, " +
+                        "#otherIncome"
+                    )
+                    .forEach(
+                        function (input) {
+
+                            input.addEventListener(
+                                "input",
+                                calculateTotal
+                            );
+
+                        }
+                    );
+
+
+                document
+                    .querySelectorAll(
+                        'input[name="incomeChanged"]'
+                    )
+                    .forEach(
+                        function (radio) {
+
+                            radio.addEventListener(
+                                "change",
+                                updateIncomeChangeFields
+                            );
+
+                        }
+                    );
+
+
+                /*
+                 * SAVE BUTTON
+                 */
+
+                saveButton.addEventListener(
+                    "click",
+                    function () {
+
+                        saveForm();
+
+                    }
+                );
+
+
+                /*
+                 * FORM SUBMIT
+                 */
+
+                form.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        if (!form.checkValidity()) {
+
+                            form.reportValidity();
+
+
+                            formStatus.textContent =
+                                "Please complete all required fields.";
+
+                            return;
+
+                        }
+
+
+                        saveForm();
+
+
+                        window.location.href =
+                            "resources.html";
+
+                    }
+                );
+
+
+                /*
+                 * INITIAL LOAD
+                 */
+
+                loadSavedData();
+
+                calculateTotal();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

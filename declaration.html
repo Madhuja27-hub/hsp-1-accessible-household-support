@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Declaration | Household Support Application
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../../css/styles.css"
+    >
+</head>
+
+<body>
+
+<main
+    id="main-content"
+    class="page-container"
+>
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <div>
+
+            <p class="eyebrow">
+                FORM HSP-1
+            </p>
+
+            <h1>
+                Application for Household Support
+            </h1>
+
+        </div>
+
+        <span class="step-indicator">
+            Step 6 of 6
+        </span>
+
+    </header>
+
+
+    <!-- PROGRESS -->
+
+    <nav
+        class="progress-bar"
+        aria-label="Application progress"
+    >
+
+        <ol>
+
+            <li class="completed">
+                <span>1</span>
+                <span>Applicant</span>
+            </li>
+
+            <li class="completed">
+                <span>2</span>
+                <span>Household</span>
+            </li>
+
+            <li class="completed">
+                <span>3</span>
+                <span>Income</span>
+            </li>
+
+            <li class="completed">
+                <span>4</span>
+                <span>Resources</span>
+            </li>
+
+            <li class="completed">
+                <span>5</span>
+                <span>Review</span>
+            </li>
+
+            <li class="current"
+                aria-current="step"
+            >
+                <span>6</span>
+                <span>Declaration</span>
+            </li>
+
+        </ol>
+
+    </nav>
+
+
+    <!-- FORM -->
+
+    <section
+        class="form-section"
+        aria-labelledby="declaration-heading"
+    >
+
+        <div class="section-heading">
+
+            <h2 id="declaration-heading">
+                Declaration
+            </h2>
+
+            <p>
+                Please read the declaration carefully before submitting
+                your Household Support application.
+            </p>
+
+        </div>
+
+
+        <!-- IMPORTANT INFORMATION -->
+
+        <div
+            class="info-box"
+            role="note"
+        >
+
+            <strong>
+                Before you submit
+            </strong>
+
+            <p>
+                Make sure the information you provided is accurate
+                and complete. You can go back and make changes before
+                submitting your application.
+            </p>
+
+        </div>
+
+
+        <form
+            id="declarationForm"
+            novalidate
+        >
+
+
+            <!-- DECLARATION TEXT -->
+
+            <fieldset>
+
+                <legend>
+                    Declaration statement
+                </legend>
+
+
+                <div
+                    class="declaration-text"
+                    tabindex="0"
+                >
+                <p>
+                    I confirm that the information I have provided in this application
+                    is true and complete to the best of my knowledge.
+                </p>
+                
+                <p>
+                    I understand that I must provide correct and complete information.
+                    If I knowingly provide false information, leave out important
+                    information, or fail to report something that could affect my
+                    application, the Department may take action against me.
+                </p>
+                
+                <p>
+                    This may include asking me to repay any money or support that I
+                    received incorrectly and temporarily preventing me from receiving
+                    future support, in accordance with the Department's rules and
+                    policies.
+                </p>
+                <p>
+                    I agree to inform the Department if there are any important changes
+                    to my household, including changes to my household members, income,
+                    address, or other circumstances that may affect my application.
+                </p>
+
+                <p>
+                    I give permission for the Department to check and verify the
+                    information in my application when necessary. This may include
+                    contacting employers, banks, financial institutions, or other
+                    government and public assistance agencies.
+                </p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- AGREEMENT -->
+
+            <fieldset>
+
+                <legend>
+                    Your agreement
+                </legend>
+
+
+                <div class="confirmation-box">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="declare"
+                            name="declare"
+                            value="yes"
+                            required
+                        >
+
+                        <span>
+                            I have read and understood the declaration
+                            above and agree that the information in my
+                            application is true and complete to the best
+                            of my knowledge.
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- SIGNATURE -->
+
+            <fieldset>
+
+                <legend>
+                    Signature
+                </legend>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="signature">
+
+                            Full name
+
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signature"
+                            name="signature"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <span class="help-text">
+                            Type your full legal name as your electronic
+                            signature.
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="sign_date">
+
+                            Date
+
+                            <span
+                                class="required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="sign_date"
+                            name="sign_date"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- REQUIRED NOTE -->
+
+            <div class="required-note">
+
+                <span aria-hidden="true">*</span>
+                Required fields
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div
+                id="formStatus"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="form-actions">
+
+                <a
+                    href="review.html"
+                    class="secondary-button"
+                >
+                    Back to Review
+                </a>
+
+
+                <button
+                    type="button"
+                    id="saveButton"
+                    class="secondary-button"
+                >
+                    Save and exit
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Submit Application
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="page-footer">
+
+        <p>
+            Form HSP-1 (rev. 03/2019)
+        </p>
+
+        <p>
+            Your information is used only to process your
+            Household Support application.
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../../js/storage.js"></script>
+<script src="../../js/validation.js"></script>
+<script src="../../js/app.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const form =
+            document.getElementById(
+                "declarationForm"
+            );
+
+        const saveButton =
+            document.getElementById(
+                "saveButton"
+            );
+
+        const formStatus =
+            document.getElementById(
+                "formStatus"
+            );
+
+
+        /* Set today's date automatically */
+
+        const dateField =
+            document.getElementById(
+                "sign_date"
+            );
+
+        if (dateField && !dateField.value) {
+
+            const today =
+                new Date()
+                    .toISOString()
+                    .split("T")[0];
+
+            dateField.value = today;
+
+        }
+
+
+        /* Save declaration */
+
+        function saveDeclaration() {
+
+            const declarationData = {
+
+                declare:
+                    document.getElementById(
+                        "declare"
+                    ).checked,
+
+                signature:
+                    document.getElementById(
+                        "signature"
+                    ).value,
+
+                sign_date:
+                    document.getElementById(
+                        "sign_date"
+                    ).value
+
+            };
+
+
+            /* Save declaration separately */
+
+            localStorage.setItem(
+                "hsp1_declaration",
+                JSON.stringify(
+                    declarationData
+                )
+            );
+
+
+            /* Also save to main application */
+
+            const existingData =
+                JSON.parse(
+                    localStorage.getItem(
+                        "hsp1_application"
+                    ) || "{}"
+                );
+
+
+            existingData.declaration =
+                declarationData;
+
+
+            localStorage.setItem(
+                "hsp1_application",
+                JSON.stringify(
+                    existingData
+                )
+            );
+
+
+            formStatus.textContent =
+                "Your declaration has been saved.";
+
+        }
+
+
+        /* Save and exit */
+
+        saveButton.addEventListener(
+            "click",
+            function () {
+
+                saveDeclaration();
+
+            }
+        );
+
+
+        /* Submit application */
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Check required fields */
+
+                if (!form.checkValidity()) {
+
+                    form.reportValidity();
+
+                    formStatus.textContent =
+                        "Please complete the required fields before submitting.";
+
+                    return;
+
+                }
+
+
+                saveDeclaration();
+
+
+                /* Confirmation */
+
+                formStatus.textContent =
+                    "Your application has been submitted successfully.";
+
+
+                formStatus.style.color =
+                    "#047857";
+
+
+                /*
+                 * Disable submit button
+                 * after successful submission.
+                 */
+
+                const submitButton =
+                    form.querySelector(
+                        'button[type="submit"]'
+                    );
+
+                submitButton.disabled =
+                    true;
+
+
+                submitButton.textContent =
+                    "Application Submitted";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
